@@ -19,9 +19,11 @@ namespace TapTheTiles
             public Rectangle[] tiles = new Rectangle[4];
             public bool isClicked = true;
 
-            /** Initialize the contents of this class
-             * 
-             */ 
+            /// <summary>
+            /// Initialize the dock
+            /// </summary>
+            /// <param name="dock">The dock that holds the tiles</param>
+            /// <param name="tiles">The titles that are in the dock</param>
             public TileDocks(DockPanel dock, params Rectangle[] tiles)
             {
                 this.dock = dock;
@@ -39,17 +41,19 @@ namespace TapTheTiles
         DispatcherTimer animationTimer = new DispatcherTimer(DispatcherPriority.Send);
         Random randomTileSelector = new Random();
 
-        /** Constructor of this Game Window
-         */ 
+        /// <summary>
+        /// Initializes the main windows
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             InitializeGameComponents();
         }
 
-        /** Initialize the varialbes needed to be initialized once
-         * 
-         */ 
+        
+        /// <summary>
+        /// Initalize the component - Equivalent to onRestart()
+        /// </summary>
         void InitializeGameComponents()
         {
             tileDocks[0] = new TileDocks(Dock0, Tile00, Tile01, Tile02, Tile03);
@@ -63,36 +67,32 @@ namespace TapTheTiles
 
         /** Main component of this Game - It is the game engine
          * 
-         *  Moves all the tiles in the required direction in a circle binding the start and end position
-         *  When the tileDock is about to disappear it will check whether it has any clicked tiles
-         *  If so,
-         *      * It will set that the dock has an unclicked tile
-         *      * And select a random tile and change it to be the clickable tile
-         *  Otherwise
-         *      * It will end the game
-         *  Updates the margin
+         *  Move all the dockTiles by a specified speed
+         *  If the tiles are clicked unclick it
          *  
-         *  If the window is not the active window it will pause the game
+         *  If the tile is not clicked end the game
+         *  If the window is notActive then Pause the game
          */ 
         void animationTimer_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < 4; i++)
             {
                 var margin = tileDocks[i].dock.Margin;
-                margin.Top = (margin.Top + 2) % 400;
-                if (margin.Top == 0)
+                margin.Top = (margin.Top + (score / 20 + 2)) % 400;
+                if (margin.Top > 5 && margin.Top < 10)
                 {
                     if (tileDocks[i].isClicked == true)
                     {
                         tileDocks[i].isClicked = false;
                         tileDocks[i].tiles[randomTileSelector.Next() % 4].Fill = Brushes.Black;
                     }
-                    else
-                    {
-                        GameOver();
-                    }
                 }
                 tileDocks[i].dock.Margin = margin;
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (tileDocks[i].dock.Margin.Top < 5 && tileDocks[i].isClicked == false) { GameOver(); }
 
                 if(this.IsActive == false)
                 {

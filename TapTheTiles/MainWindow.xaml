@@ -29,11 +29,11 @@
             <Rectangle Name="Tile33" Fill="White" Height="100" Stroke="Black" VerticalAlignment="Top" Width="70" MouseLeftButtonDown="Tile_MouseLeftButtonDown"/>
         </DockPanel>
         <DockPanel Background="Chocolate" HorizontalAlignment="Center" Height="120" LastChildFill="False" Margin="0,0,0,0" VerticalAlignment="Top" Width="280">
-            <Label Content="©Kappspot" FontSize="15" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Foreground="BurlyWood" FontWeight="ExtraBold" VerticalAlignment="Bottom" Margin="-1,0,0,0" Background="Black" DockPanel.Dock="Bottom" TextOptions.TextHintingMode="Animated" Height="31" FontFamily="OCR A Extended"/>
-            <Label Content="* Tap the black tiles&#xA;* Press the 1 2 3 4 keys" Name="Instructions" VerticalContentAlignment="Bottom" FontSize="18" HorizontalContentAlignment="Center" Foreground="BurlyWood" FontWeight="ExtraBold" VerticalAlignment="Bottom" Margin="-1,0,0,0" Background="Black" DockPanel.Dock="Bottom" TextOptions.TextHintingMode="Animated" Height="54" FontFamily="OCR A Extended"/>
-            <Label Content="Score : 000" VerticalContentAlignment="Center" Name="Score" FontSize="15" Foreground="AntiqueWhite" FontWeight="ExtraBold" Height="35" VerticalAlignment="Top" Width="130" FontFamily="OCR A Extended"/>
-            <Button Content="Start" Name="PlayOrPause" FontSize="10" Foreground="AntiqueWhite" FontWeight="ExtraBold" Background="Transparent" Height="35" VerticalAlignment="Top" DockPanel.Dock="Left" Width="75" Click="Button_Click" FontFamily="OCR A Extended"/>
-            <Button Content="New Game" FontSize="10" Foreground="AntiqueWhite" FontWeight="ExtraBold" Background="Transparent" Height="35" VerticalAlignment="Top" DockPanel.Dock="Left" Width="75" Click="Button_Click" FontFamily="OCR A Extended"/>
+            <Label Content="©Kappspot" FontSize="15" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Foreground="BurlyWood" FontWeight="ExtraBold" VerticalAlignment="Bottom" Margin="-1,0,0,0" Background="Black" DockPanel.Dock="Bottom" TextOptions.TextHintingMode="Animated" Height="31" FontFamily="Lucida Console"/>
+            <Label Content="* Tap the black tiles&#xA;* Press the 1 2 3 4 keys" Name="Instructions" VerticalContentAlignment="Bottom" FontSize="18" HorizontalContentAlignment="Center" Foreground="BurlyWood" FontWeight="ExtraBold" VerticalAlignment="Bottom" Margin="-1,0,0,0" Background="Black" DockPanel.Dock="Bottom" TextOptions.TextHintingMode="Animated" Height="54" FontFamily="Lucida Console"/>
+            <Label Content="Score : 000" VerticalContentAlignment="Center" Name="Score" FontSize="15" Foreground="AntiqueWhite" FontWeight="ExtraBold" Height="35" VerticalAlignment="Top" Width="130" FontFamily="Lucida Console"/>
+            <Button Content="Start" Name="PlayOrPause" FontSize="13" Foreground="AntiqueWhite" FontWeight="ExtraBold" Background="Transparent" Height="35" VerticalAlignment="Top" DockPanel.Dock="Left" Width="75" Click="Button_Click" FontFamily="Lucida Console"/>
+            <Button Content="New Game" FontSize="13" Foreground="AntiqueWhite" FontWeight="ExtraBold" Background="Transparent" Height="35" VerticalAlignment="Top" DockPanel.Dock="Left" Width="75" Click="Button_Click" FontFamily="Lucida Console"/>
         </DockPanel>
     </Grid>
 </Window>
